@@ -1,0 +1,14 @@
+<div class="search-container" fxLayout="column" fxLayoutAlign="center center">
+    <div class="search-btn" [hidden]="isSearchField" (click)="toogleSearchField()">
+        <mat-icon>search</mat-icon>
+    </div>
+    <div class="search-input" [hidden]="!isSearchField">
+        <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Search" [formControl]="seachInput">
+            <mat-icon matSuffix (click)="toogleSearchField()">
+                close</mat-icon>
+        </mat-form-field>
+    </div>
+</div>
+{{seachInput.value}}

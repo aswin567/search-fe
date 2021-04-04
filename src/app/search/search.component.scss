@@ -1,0 +1,28 @@
+.search-container {
+  height: 100%;
+  cursor: pointer;
+
+  .search-btn {
+    mat-icon {
+      font-size: 39px;
+      padding: 8px 0 0 8px;
+      height: 44px;
+      width: 44px;
+      color: #fff;
+      background: #ff7043;
+      border-radius: 12px;
+      transition: all ease-in-out .3s;
+      ;
+
+      &:hover {
+        border: 1px solid;
+        color: #ff7043;
+        background: #fff;
+        border-radius: 6px;
+      }
+    }
+  }
+  .search-input{
+      color: #ff7043;
+  }
+}
