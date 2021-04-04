@@ -1,0 +1,25 @@
+.search-result{
+    width: calc(100% - 50px);
+    margin: auto;    
+    margin-top: 10px;
+    .result-item{
+        margin-top: 10px;
+        min-width: 300px;
+    }
+}
+.empty-container{
+    height: calc(100% - 106px);
+    .msg{
+        font-size: 19px;
+        color: #cecece;
+        padding: 21px;
+        border-radius: 6px;
+        text-align: center;
+    
+        h1{    
+            font-weight: 600;
+            font-size: 67px;
+            margin: 30px;
+        }
+    }
+}

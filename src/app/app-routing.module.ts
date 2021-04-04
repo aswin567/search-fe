@@ -6,10 +6,10 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: 'search', component: SearchComponent },
-  { path: 'search-result', component: ResultComponent, resolve: {
-    searchResolver: SearchResolver
-  } },
-  { path: '',   redirectTo: '/search', pathMatch: 'full' }
+  {
+    path: 'search-result', component: ResultComponent
+  },
+  { path: '', redirectTo: '/search', pathMatch: 'full' }
 ];
 
 @NgModule({
