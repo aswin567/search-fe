@@ -23,22 +23,24 @@ describe('HttpCommunicatorService', () => {
   });
 
   it('should fetch searc result as an Observable',() =>  {
-      const resultJson = [
-        {
-          postId: 80,
-          id: 400,
-          name: 'quia aut consequatur sunt iste aliquam impedit sit',
-          email: 'Brennon@carmela.tv',
-          body: 'natus iure velit impedit sed officiis sint\nmolestiae non beatae\nillo consequatur minima\nsed ratione est tenetur'
-        }
-      ]
+
       httpCommunicatorService.getSearchData('bre').subscribe((result: Array<Result>)=>{
         expect(result.length).toBe(1);
       });
 
       let req = httpMock.expectOne(`${environment.baseUrl}?q=bre`);
       expect(req.request.method).toBe("GET");
-      req.flush(resultJson);
+      req.flush(MockJsonData);
       httpMock.verify();
   });
 });
+
+export const MockJsonData = [
+  {
+    postId: 80,
+    id: 400,
+    name: 'quia aut consequatur sunt iste aliquam impedit sit',
+    email: 'Brennon@carmela.tv',
+    body: 'natus iure velit impedit sed officiis sint\nmolestiae non beatae\nillo consequatur minima\nsed ratione est tenetur'
+  }
+]

@@ -6,24 +6,31 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ActivatedRoute, Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Observable } from 'rxjs';
-import { HttpCommunicatorService } from '../http-communicator.service';
+import { Observable, of } from 'rxjs';
+import { MockJsonData } from '../http-communicator.service.spec';
 import { SearchComponent } from '../search/search.component';
 import { SearchService } from '../search/search.service';
+import { Result } from './result';
 
 import { ResultComponent } from './result.component';
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
   let fixture: ComponentFixture<ResultComponent>;
-
+  class MockSearchService {
+    onSearchData(searchText: string): Observable<Array<Result>> {
+      return of(MockJsonData)
+    }
+  }
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatToolbarModule  ],
+      imports: [ RouterTestingModule, HttpClientTestingModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatToolbarModule, BrowserAnimationsModule  ],
       declarations: [ ResultComponent, SearchComponent ],
-      providers: [SearchService]
+      providers: [{
+        provide: SearchService, useClass: MockSearchService
+      }]
     })
     .compileComponents();
   }));
@@ -34,7 +41,7 @@ describe('ResultComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
