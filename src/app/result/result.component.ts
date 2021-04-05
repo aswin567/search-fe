@@ -36,6 +36,8 @@ export class ResultComponent implements OnDestroy {
         this.router.navigate(['/search']);
       }
       this.getData(this.query);
+    }, (error)=>{
+      throw error;
     });
   }
 
@@ -47,6 +49,8 @@ export class ResultComponent implements OnDestroy {
         this.results = res;
         this.isLoading = false;
         this.initialLoaded = true;
+      }, (error)=>{
+        throw error;
       });
     }
   }
