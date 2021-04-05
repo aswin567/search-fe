@@ -27,12 +27,15 @@ export class ResultComponent {
     })}
 
   getData(searchText: string): void {
-    this.isLoading = true;
-    this.searchService.onSearchData(searchText).subscribe((res: Array<Result>) => {
-      this.results = res;
-      this.isLoading = false;
-      this.initialLoaded = true;
-    });
+    if(searchText){
+
+      this.isLoading = true;
+      this.searchService.onSearchData(searchText).subscribe((res: Array<Result>) => {
+        this.results = res;
+        this.isLoading = false;
+        this.initialLoaded = true;
+      });
+    }
   }
 
 }
