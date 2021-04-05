@@ -1,6 +1,6 @@
 context('Searching comment', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:4200/')
+        cy.visit(Cypress.env('baseUrl'))
     });
     it('check search field and button', () => {
         cy.get('#searchShowBtn').click();
