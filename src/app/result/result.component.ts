@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from '../search/search.service';
 import { Result } from './result';
@@ -8,15 +8,14 @@ import { Result } from './result';
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent implements OnInit {
+export class ResultComponent {
 
-  constructor(private route: ActivatedRoute, private searchService: SearchService, private router: Router) { }
   results: Array<Result>
   query: string;
   isLoading: boolean;
   initialLoaded: boolean;
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute, private searchService: SearchService, private router: Router) { 
     this.route.queryParams.subscribe((query) => {
       let searchText = query['q'];
       if (searchText) {
@@ -25,9 +24,7 @@ export class ResultComponent implements OnInit {
         this.router.navigate(['/search']);
       }
       this.getData(this.query);
-    })
-
-  }
+    })}
 
   getData(searchText: string): void {
     this.isLoading = true;

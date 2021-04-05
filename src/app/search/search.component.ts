@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SearchService } from './search.service';
@@ -8,19 +8,17 @@ import { SearchService } from './search.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit, OnChanges {
+export class SearchComponent implements OnChanges {
   @Input() searchInput: string;
   @Input() isSearchField: boolean;
   searchInputCtrl = new FormControl();
+
   constructor(private searchService: SearchService, private router: Router) {
     this.searchInputCtrl.valueChanges.subscribe((inputValue) => {
       if (inputValue && inputValue.length > 2) {
         this.router.navigate(['/search-result'], { queryParams: { q: inputValue } });
       }
     });
-  }
-
-  ngOnInit(): void {
   }
 
   ngOnChanges(changes: SimpleChanges) {

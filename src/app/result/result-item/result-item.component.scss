@@ -1,0 +1,8 @@
+
+@import './../../../assets/styles/constant.scss';
+
+.result-card {
+    border: 1px solid $resultColor;
+    background: $resultBgColor;
+    box-shadow: none !important;
+  }
