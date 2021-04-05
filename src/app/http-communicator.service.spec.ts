@@ -22,7 +22,7 @@ describe('HttpCommunicatorService', () => {
     httpMock.verify();
   });
 
-  it('should fetch searc result as an Observable', () => {
+  it('should fetch search result as an Observable', () => {
 
     httpCommunicatorService.getSearchData('bre').subscribe((result: Array<Result>) => {
       expect(result.length).toBe(1);
