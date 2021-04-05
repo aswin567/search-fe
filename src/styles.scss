@@ -1,31 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/styles/material.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-form-field-outline-thick, .mat-form-field-label{
-    color: #ff7043 !important;
-}
-.mat-input-element{
-    color: rgba(0,0,0,.87) !important;
-}
-.mat-toolbar-row, .mat-toolbar-single-row{
-    height: 106px;    
-    padding: 0 50px !important;
-}
-.mat-form-field-wrapper{
-    padding-bottom: 0;
-}
-.mat-card{
-    border: 1px solid #ff704359;
-    background: #ff724905;
-    box-shadow: none !important;
+html,
+body {
+  height: 100%;
 }
 
-.mat-progress-bar-buffer {
-    background-color: #e9d2c5;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.mat-progress-bar-fill::after {
-    background-color: #fe7243;
-}
