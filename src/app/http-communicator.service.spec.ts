@@ -1,5 +1,4 @@
-import { getTestBed, inject, TestBed } from '@angular/core/testing';
-
+import { getTestBed, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpCommunicatorService } from './http-communicator.service';
 import { Result } from './result/result';
@@ -28,14 +27,14 @@ describe('HttpCommunicatorService', () => {
       expect(result.length).toBe(1);
     });
 
-    let req = httpMock.expectOne(`${environment.baseUrl}?q=bre`);
-    expect(req.request.method).toBe("GET");
-    req.flush(MockJsonData);
+    const req = httpMock.expectOne(`${environment.baseUrl}?q=bre`);
+    expect(req.request.method).toBe('GET');
+    req.flush(MOCK_JSON_DATA);
     httpMock.verify();
   });
 });
 
-export const MockJsonData = [
+export const MOCK_JSON_DATA = [
   {
     postId: 80,
     id: 400,
@@ -43,4 +42,4 @@ export const MockJsonData = [
     email: 'Brennon@carmela.tv',
     body: 'natus iure velit impedit sed officiis sint\nmolestiae non beatae\nillo consequatur minima\nsed ratione est tenetur'
   }
-]
+];

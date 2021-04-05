@@ -26,9 +26,9 @@ export class SearchComponent implements OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    let searchInputChanges = changes['searchInput'];
+    const searchInputChanges = changes.searchInput;
     if (searchInputChanges && searchInputChanges.currentValue) {
-      this.searchInputCtrl.setValue(searchInputChanges.currentValue)
+      this.searchInputCtrl.setValue(searchInputChanges.currentValue);
     }
   }
 

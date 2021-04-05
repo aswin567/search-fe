@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Observable, of } from 'rxjs';
-import { MockJsonData } from '../http-communicator.service.spec';
+import { MOCK_JSON_DATA } from '../http-communicator.service.spec';
 import { SearchComponent } from '../search/search.component';
 import { SearchService } from '../search/search.service';
 import { Result } from './result';
@@ -20,12 +20,19 @@ describe('ResultComponent', () => {
   let fixture: ComponentFixture<ResultComponent>;
   class MockSearchService {
     onSearchData(searchText: string): Observable<Array<Result>> {
-      return of(MockJsonData)
+      return of(MOCK_JSON_DATA);
     }
   }
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, HttpClientTestingModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatToolbarModule, BrowserAnimationsModule],
+      imports: [RouterTestingModule,
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        MatToolbarModule,
+        BrowserAnimationsModule],
       declarations: [ResultComponent, SearchComponent],
       providers: [{
         provide: SearchService, useClass: MockSearchService

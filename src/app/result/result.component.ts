@@ -12,27 +12,31 @@ import { Result } from './result';
 })
 export class ResultComponent implements OnDestroy {
 
-  results: Array<Result>
+  results: Array<Result>;
   query: string;
   isLoading: boolean;
   initialLoaded: boolean;
 
-  private destroy: Subject<void> = new Subject<void>()
+  private destroy: Subject<void> = new Subject<void>();
 
   constructor(private route: ActivatedRoute, private searchService: SearchService, private router: Router) {
     this.observerQueryParams();
   }
 
+  ngOnDestroy(): void {
+    this.destroy.unsubscribe();
+  }
+
   private observerQueryParams(): void {
     this.route.queryParams.pipe(takeUntil(this.destroy)).subscribe((query) => {
-      let searchText = query['q'];
+      const searchText = query.q;
       if (searchText) {
-        this.query = searchText
+        this.query = searchText;
       } else {
         this.router.navigate(['/search']);
       }
       this.getData(this.query);
-    })
+    });
   }
 
   private getData(searchText: string): void {
@@ -45,9 +49,5 @@ export class ResultComponent implements OnDestroy {
         this.initialLoaded = true;
       });
     }
-  }
-
-  ngOnDestroy(): void {
-    this.destroy.unsubscribe();
   }
 }

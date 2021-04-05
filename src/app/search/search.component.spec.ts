@@ -33,13 +33,13 @@ describe('SearchComponent', () => {
 
   it('should toogle search field', () => {
     const isSearchField = component.isSearchField;
-    component.toogleSearchField()
+    component.toogleSearchField();
     expect(component.isSearchField).toBe(!isSearchField);
   });
 
   it('should clear search field', () => {
     component.searchInputCtrl.setValue('xz');
-    component.clearText()
+    component.clearText();
     const searchInputFieldValue = component.searchInputCtrl.value;
     console.log(component.searchInputCtrl.value);
     expect(searchInputFieldValue).toBeNull();
