@@ -1,6 +1,6 @@
 # SearchEngine
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
 
 ## Development server
 
@@ -12,13 +12,21 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `npm run build` for a production build of the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
-Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
-Run `npm run cypress-run` to execute the end-to-end tests via [Cypress].
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Functionality
+
+1. User can see a blank screen with search button on center.
+2. Once the user click on the button input field with submit button will be visible
+3. When he type any thing other than 3 letter word the app will search for the word and take you to the result page.
+4. If you are typing less than 3 letters you can explicitly make the search by clicking on submit button
+5. In results screen you can see the search functionality, There also search will happens as similar as the first page.
+6. If you have zero results App will indicates you.
