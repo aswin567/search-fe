@@ -13,7 +13,7 @@ export class SearchComponent implements OnChanges {
   @Input() isSearchField: boolean;
   searchInputCtrl = new FormControl();
 
-  constructor(private searchService: SearchService, private router: Router) {
+  constructor(private router: Router) {
     this.searchInputCtrl.valueChanges.subscribe((inputValue) => {
       if (inputValue && inputValue.length > 2) {
         this.router.navigate(['/search-result'], { queryParams: { q: inputValue } });
@@ -27,6 +27,8 @@ export class SearchComponent implements OnChanges {
       this.searchInputCtrl.setValue(searchInputChanges.currentValue)
     }
   }
+
+  
 
   toogleSearchField(): void {
     this.isSearchField = !this.isSearchField;
