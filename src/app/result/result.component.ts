@@ -14,7 +14,8 @@ export class ResultComponent implements OnInit {
   results: Array<Result>
   query: string;
   isLoading: boolean;
-  
+  initialLoaded: boolean;
+
   ngOnInit(): void {
     this.route.queryParams.subscribe((query) => {
       let searchText = query['q'];
@@ -33,6 +34,7 @@ export class ResultComponent implements OnInit {
     this.searchService.onSearchData(searchText).subscribe((res: Array<Result>) => {
       this.results = res;
       this.isLoading = false;
+      this.initialLoaded = true;
     });
   }
 

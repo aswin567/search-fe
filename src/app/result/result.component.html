@@ -1,15 +1,15 @@
 <mat-toolbar>
     <app-search [searchInput]="query" [isSearchField]="true"></app-search>
 </mat-toolbar>
-<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
-<div class="search-result" fxLayout="row wrap" fxLayoutGap="10px"
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading" ></mat-progress-bar>
+<div class="search-result" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="10px"
     *ngIf="results && results.length !== 0 else emptyBlock">
     <div class="result-item" *ngFor="let resultItem of results" fxFlex="30">
         <app-result-item [result]="resultItem"></app-result-item>
     </div>
 </div>
 <ng-template #emptyBlock>
-    <div class="empty-container" fxLayout="row" fxLayoutAlign="center center">
+    <div class="empty-container" fxLayout="row" fxLayoutAlign="center center" *ngIf="initialLoaded">
         <div class="msg">
             <h1>404</h1>
             <label>No Items Found</label>

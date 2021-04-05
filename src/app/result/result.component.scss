@@ -1,14 +1,15 @@
 .search-result{
-    width: calc(100% - 50px);
+    height: calc(100% - 110px);
+    overflow: auto;
     margin: auto;    
-    margin-top: 10px;
+    padding-top: 10px;
     .result-item{
         margin-top: 10px;
         min-width: 300px;
     }
 }
 .empty-container{
-    height: calc(100% - 106px);
+    height: calc(100% - 110px);
     .msg{
         font-size: 19px;
         color: #cecece;
