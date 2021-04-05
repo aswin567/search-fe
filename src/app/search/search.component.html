@@ -1,15 +1,15 @@
 <div class="search-container" fxLayout="column" fxLayoutAlign="center center">
-    <div class="search-btn" [hidden]="isSearchField || searchInputCtrl.value" (click)="toogleSearchField()">
+    <div class="search-btn" id="searchShowBtn" [hidden]="isSearchField || searchInputCtrl.value" (click)="toogleSearchField()">
         <mat-icon>search</mat-icon>
     </div>
     <div class="search-input" [hidden]="!isSearchField">
         <div fxLayout="row" fxLayoutAlign="center center">
             <mat-form-field appearance="outline">
                 <mat-label>Search</mat-label>
-                <input matInput placeholder="Search" [formControl]="searchInputCtrl">
-                <mat-icon matSuffix (click)="clearText()">close</mat-icon>
+                <input matInput placeholder="Search" [formControl]="searchInputCtrl" id="searchInput">
+                <mat-icon matSuffix (click)="clearText()" id="clearBtn">close</mat-icon>
             </mat-form-field>
-            <button mat-raised-button color="warn" (click)="showResult(searchInputCtrl.value)">
+            <button mat-raised-button color="warn" (click)="showResult(searchInputCtrl.value)" id="sendBtn">
                 <mat-icon>send</mat-icon>
             </button>
         </div>
