@@ -25,8 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Functionality
 
 1. User can see a blank screen with search button on center.
+![image](https://user-images.githubusercontent.com/13688824/113608179-d7211700-9667-11eb-888a-663189d8e744.png)
+
 2. Once the user click on the button input field with submit button will be visible
-3. When he type any thing other than 3 letter word the app will search for the word and take you to the result page.
+![image](https://user-images.githubusercontent.com/13688824/113608252-f15af500-9667-11eb-9fc2-bc54ce8d91f0.png)
+
+3. When he type anything other than 3 letter word the app will search for the word and take you to the result page.
 4. If you are typing less than 3 letters you can explicitly make the search by clicking on submit button
 5. In results screen you can see the search functionality, There also search will happens as similar as the first page.
-6. If you have zero results App will indicates you.
+![image](https://user-images.githubusercontent.com/13688824/113608338-12234a80-9668-11eb-86fd-f8348b9ee861.png)
+
+6. If you have zero results App will indicates same.
+![image](https://user-images.githubusercontent.com/13688824/113608399-2b2bfb80-9668-11eb-9c6e-b8347c9fa743.png)
