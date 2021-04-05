@@ -24,7 +24,13 @@
       }
     }
   }
-  .search-input{
-      color: $primaryColor;
+
+  .search-input {
+    color: $primaryColor;
+
+    button {
+      margin-left: 7px;
+      padding: 3px;
+    }
   }
 }

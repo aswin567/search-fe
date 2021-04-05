@@ -15,7 +15,7 @@ describe('SearchService', () => {
   }
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers:[{
+      providers: [{
         provide: HttpCommunicatorService, useClass: MockHttpCommunicatorService
       }]
     });
@@ -25,7 +25,7 @@ describe('SearchService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  
+
   it('should be get search data', () => {
     const serviceOutput = service.onSearchData('ele');
     expect(serviceOutput).toBeDefined();

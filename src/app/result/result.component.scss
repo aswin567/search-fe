@@ -1,26 +1,29 @@
-.search-result{
-    height: calc(100% - 110px);
-    overflow: auto;
-    margin: auto;    
-    padding-top: 10px;
-    .result-item{
-        margin-top: 10px;
-        min-width: 300px;
-    }
+.search-result {
+  height: calc(100% - 110px);
+  overflow: auto;
+  margin: auto;
+  padding-top: 10px;
+
+  .result-item {
+    margin-top: 10px;
+    min-width: 300px;
+  }
 }
-.empty-container{
-    height: calc(100% - 110px);
-    .msg{
-        font-size: 19px;
-        color: #cecece;
-        padding: 21px;
-        border-radius: 6px;
-        text-align: center;
-    
-        h1{    
-            font-weight: 600;
-            font-size: 67px;
-            margin: 30px;
-        }
+
+.empty-container {
+  height: calc(100% - 110px);
+
+  .msg {
+    font-size: 19px;
+    color: #cecece;
+    padding: 21px;
+    border-radius: 6px;
+    text-align: center;
+
+    h1 {
+      font-weight: 600;
+      font-size: 67px;
+      margin: 30px;
     }
+  }
 }

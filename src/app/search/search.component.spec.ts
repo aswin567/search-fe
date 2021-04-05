@@ -16,11 +16,11 @@ describe('SearchComponent', () => {
   let router: Router;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ],
-      imports:[RouterTestingModule.withRoutes([]), MatIconModule, ReactiveFormsModule, MatInputModule, BrowserAnimationsModule]
+      declarations: [SearchComponent],
+      imports: [RouterTestingModule.withRoutes([]), MatIconModule, ReactiveFormsModule, MatInputModule, BrowserAnimationsModule]
     }).compileComponents();
     router = TestBed.get(Router);
-    fixture = TestBed.createComponent(SearchComponent); 
+    fixture = TestBed.createComponent(SearchComponent);
     router.initialNavigation();
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -35,12 +35,12 @@ describe('SearchComponent', () => {
     const isSearchField = component.isSearchField;
     component.toogleSearchField()
     expect(component.isSearchField).toBe(!isSearchField);
-  });  
-  
+  });
+
   it('should clear search field', () => {
     component.searchInputCtrl.setValue('xz');
     component.clearText()
-    const searchInputFieldValue =  component.searchInputCtrl.value;
+    const searchInputFieldValue = component.searchInputCtrl.value;
     console.log(component.searchInputCtrl.value);
     expect(searchInputFieldValue).toBeNull();
   });

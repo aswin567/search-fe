@@ -3,11 +3,15 @@
         <mat-icon>search</mat-icon>
     </div>
     <div class="search-input" [hidden]="!isSearchField">
-        <mat-form-field appearance="outline">
-            <mat-label>Search</mat-label>
-            <input matInput placeholder="Search" [formControl]="searchInputCtrl">
-            <mat-icon matSuffix (click)="clearText()">
-                close</mat-icon>
-        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-form-field appearance="outline">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Search" [formControl]="searchInputCtrl">
+                <mat-icon matSuffix (click)="clearText()">close</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="warn" (click)="showResult(searchInputCtrl.value)">
+                <mat-icon>send</mat-icon>
+            </button>
+        </div>
     </div>
 </div>

@@ -4,12 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,13 +31,15 @@ import { ResultItemComponent } from './result/result-item/result-item.component'
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    HttpClientModule,
+
     MatIconModule,
     MatFormFieldModule,
     MatToolbarModule,
     MatInputModule,
     MatCardModule,
     MatProgressBarModule,
-    HttpClientModule
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

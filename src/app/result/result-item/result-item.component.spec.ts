@@ -10,9 +10,9 @@ describe('ResultItemComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MatCardModule],
-      declarations: [ ResultItemComponent ]
+      declarations: [ResultItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

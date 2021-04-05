@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { SearchService } from '../search/search.service';
 import { Result } from './result';
 
@@ -8,15 +10,21 @@ import { Result } from './result';
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent {
+export class ResultComponent implements OnDestroy {
 
   results: Array<Result>
   query: string;
   isLoading: boolean;
   initialLoaded: boolean;
 
-  constructor(private route: ActivatedRoute, private searchService: SearchService, private router: Router) { 
-    this.route.queryParams.subscribe((query) => {
+  private destroy: Subject<void> = new Subject<void>()
+
+  constructor(private route: ActivatedRoute, private searchService: SearchService, private router: Router) {
+    this.observerQueryParams();
+  }
+
+  private observerQueryParams(): void {
+    this.route.queryParams.pipe(takeUntil(this.destroy)).subscribe((query) => {
       let searchText = query['q'];
       if (searchText) {
         this.query = searchText
@@ -24,13 +32,14 @@ export class ResultComponent {
         this.router.navigate(['/search']);
       }
       this.getData(this.query);
-    })}
+    })
+  }
 
-  getData(searchText: string): void {
-    if(searchText){
+  private getData(searchText: string): void {
+    if (searchText) {
 
       this.isLoading = true;
-      this.searchService.onSearchData(searchText).subscribe((res: Array<Result>) => {
+      this.searchService.onSearchData(searchText).pipe(takeUntil(this.destroy)).subscribe((res: Array<Result>) => {
         this.results = res;
         this.isLoading = false;
         this.initialLoaded = true;
@@ -38,4 +47,7 @@ export class ResultComponent {
     }
   }
 
+  ngOnDestroy(): void {
+    this.destroy.unsubscribe();
+  }
 }

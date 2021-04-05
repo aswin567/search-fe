@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,13 +25,13 @@ describe('ResultComponent', () => {
   }
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatToolbarModule, BrowserAnimationsModule  ],
-      declarations: [ ResultComponent, SearchComponent ],
+      imports: [RouterTestingModule, HttpClientTestingModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatToolbarModule, BrowserAnimationsModule],
+      declarations: [ResultComponent, SearchComponent],
       providers: [{
         provide: SearchService, useClass: MockSearchService
       }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

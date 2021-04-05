@@ -1,7 +1,7 @@
 <mat-toolbar>
     <app-search [searchInput]="query" [isSearchField]="true"></app-search>
 </mat-toolbar>
-<mat-progress-bar mode="indeterminate" *ngIf="isLoading" ></mat-progress-bar>
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
 <div class="search-result" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="10px"
     *ngIf="results && results.length !== 0 else emptyBlock">
     <div class="result-item" *ngFor="let resultItem of results" fxFlex="30">

@@ -22,16 +22,16 @@ describe('HttpCommunicatorService', () => {
     httpMock.verify();
   });
 
-  it('should fetch searc result as an Observable',() =>  {
+  it('should fetch searc result as an Observable', () => {
 
-      httpCommunicatorService.getSearchData('bre').subscribe((result: Array<Result>)=>{
-        expect(result.length).toBe(1);
-      });
+    httpCommunicatorService.getSearchData('bre').subscribe((result: Array<Result>) => {
+      expect(result.length).toBe(1);
+    });
 
-      let req = httpMock.expectOne(`${environment.baseUrl}?q=bre`);
-      expect(req.request.method).toBe("GET");
-      req.flush(MockJsonData);
-      httpMock.verify();
+    let req = httpMock.expectOne(`${environment.baseUrl}?q=bre`);
+    expect(req.request.method).toBe("GET");
+    req.flush(MockJsonData);
+    httpMock.verify();
   });
 });
 
